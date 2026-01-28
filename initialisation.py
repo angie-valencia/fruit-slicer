@@ -41,11 +41,13 @@ def charger_image(chemin, taille=None):
         if taille:
             image = pygame.transform.scale(image, taille)
         return image
-    except pygame.error as e:
+    except (pygame.error, FileNotFoundError) as e:
         print(f"Erreur lors du chargement de l'image {chemin}: {e}")
-        # Retourne une surface rouge en cas d'erreur (pour debug)
-        surface = pygame.Surface((TAILLE_OBJET, TAILLE_OBJET))
-        surface.fill((255, 0, 0))
+        # Retourne une surface colorée en cas d'erreur (pour debug)
+        largeur = taille[0] if taille else TAILLE_OBJET
+        hauteur = taille[1] if taille else TAILLE_OBJET
+        surface = pygame.Surface((largeur, hauteur))
+        surface.fill((255, 0, 255))  # Magenta pour repérer facilement
         return surface
 
 
