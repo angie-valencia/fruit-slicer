@@ -70,7 +70,7 @@ IMAGES = {
     "bombe": CHEMIN_IMAGES + "bombe.png",
     "glacon": CHEMIN_IMAGES + "ice-cube.png",
     "fond": CHEMIN_IMAGES + "paysage.png",
-    "coeur": CHEMIN_IMAGES + "coeur.webp",
+    "coeur": CHEMIN_IMAGES + "coeur.png",
     "boom": CHEMIN_IMAGES + "boom.png",
     "image_accueil": CHEMIN_IMAGES + "image_accueil.png",
 }
