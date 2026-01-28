@@ -56,7 +56,7 @@ FPS = 60  # Images par seconde
 # ----- CHEMINS DES IMAGES -----
 # Chemin absolu basé sur l'emplacement de ce fichier
 import os
-DOSSIER_PROJET = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DOSSIER_PROJET = os.path.dirname(os.path.abspath(__file__))
 CHEMIN_IMAGES = os.path.join(DOSSIER_PROJET, "image") + os.sep
 
 # Dictionnaire des images disponibles
