@@ -81,3 +81,51 @@ LISTE_FRUITS = ["ananas", "banane", "pomme", "orange", "pasteque", "framboise"]
 # ----- RÈGLES DU JEU -----
 NOMBRE_STRIKES_MAX = 3  # Game over après 3 strikes
 DUREE_GEL_GLACON = 3  # Secondes de gel quand on touche un glaçon
+
+# ----- GAMEPLAY -----
+SCORE_INITIAL = 0
+POINTS_PAR_FRUIT = 1
+
+# Bonus combos selon les règles :
+# 3 fruits = +2, 4 fruits = +3, 5 fruits = +4, etc.
+# Formule : bonus = nb_fruits - 1
+BONUS_COMBO_BASE = -1  # On utilisera : nb_fruits + (nb_fruits - 1) si nb_fruits >= 3
+
+# ----- VIES ET STRIKES -----
+NOMBRE_VIES_INITIAL = 3
+
+# ----- OBJETS SPÉCIAUX -----
+DUREE_GEL = 180  # 3 secondes * 60 FPS
+PROBABILITE_BOMBE = 0.05  # 5% de chance d'avoir une bombe
+PROBABILITE_GLACON = 0.03  # 3% de chance d'avoir un glaçon
+
+# ----- DIFFICULTÉ -----
+DIFFICULTES = {
+    "facile": {
+        "frames_entre_spawn": 120,  # 2 secondes
+        "vitesse_y_min": -23,
+        "vitesse_y_max": -20,
+    },
+    "normal": {
+        "frames_entre_spawn": 90,   # 1.5 secondes
+        "vitesse_y_min": -27,
+        "vitesse_y_max": -23,
+    },
+    "difficile": {
+        "frames_entre_spawn": 60,   # 1 seconde
+        "vitesse_y_min": -30,
+        "vitesse_y_max": -26,
+    }
+}
+
+# ----- SAUVEGARDE -----
+NOMBRE_SCORES_A_SAUVER = 5  # Top 5
+
+# ----- CHEMINS DES SONS -----
+CHEMIN_SONS = os.path.join(DOSSIER_PROJET, "sons") + os.sep
+
+SONS = {
+    "clic_bouton": CHEMIN_SONS + "clic.wav",
+    "clic_play": CHEMIN_SONS + "start.mp3",  # Son différent pour le bouton Play
+    "clic_retour": CHEMIN_SONS + "clic.wav",
+}

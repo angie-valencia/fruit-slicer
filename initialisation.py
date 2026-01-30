@@ -5,7 +5,7 @@
 import pygame
 from constantes import (
     LARGEUR_FENETRE, HAUTEUR_FENETRE,
-    IMAGES, TAILLE_OBJET
+    IMAGES, TAILLE_OBJET, SONS
 )
 
 
@@ -70,3 +70,22 @@ def charger_toutes_les_images():
             images_chargees[nom] = charger_image(chemin, (TAILLE_OBJET, TAILLE_OBJET))
 
     return images_chargees
+
+def charger_sons():
+    """
+    Charge tous les sons du jeu.
+    Retourne: Un dictionnaire avec tous les sons chargés
+    """
+    sons_charges = {}
+    
+    for nom, chemin in SONS.items():
+        try:
+            son = pygame.mixer.Sound(chemin)
+            son.set_volume(0.7)  # Volume à 50% (0.0 à 1.0)
+            sons_charges[nom] = son
+        except (pygame.error, FileNotFoundError) as e:
+            print(f"Erreur lors du chargement du son {chemin}: {e}")
+            # Créer un son vide en cas d'erreur (pour ne pas planter le jeu)
+            sons_charges[nom] = None
+    
+    return sons_charges
