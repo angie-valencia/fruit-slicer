@@ -129,3 +129,25 @@ SONS = {
     "clic_play": CHEMIN_SONS + "start.mp3",  # Son différent pour le bouton Play
     "clic_retour": CHEMIN_SONS + "clic.wav",
 }
+
+# ============================================
+# NOUVELLES CONSTANTES POUR MODE MIDI
+# (Ajoutées pour compatibilité avec audio_analysis.py)
+# ============================================
+
+# Musiques MIDI disponibles
+LISTE_MUSIQUES = {
+    "1": {"nom": "Queen - Don't Stop Me Now", "fichier": "queen", "offset": 7.85},
+    "2": {"nom": "ZZ Top - La Grange", "fichier": "zztop", "offset": 5.80},
+}
+
+# Physique alternative pour mode MIDI (plus simple)
+GRAVITE_MIDI = 0.18
+VITESSE_INITIALE_Y_MIN_MIDI = -24
+VITESSE_INITIALE_Y_MAX_MIDI = -20
+
+# Son Toasty (easter egg)
+SONS["toasty"] = os.path.join(DOSSIER_PROJET, "toasty.wav")
+
+# Images pour le mode MIDI (si tu veux les ajouter plus tard)
+# Pour l'instant on garde tes images actuelles

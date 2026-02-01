@@ -3,9 +3,10 @@
 # ============================================
 
 import pygame
+import os
 from constantes import (
     LARGEUR_FENETRE, HAUTEUR_FENETRE,
-    IMAGES, TAILLE_OBJET, SONS
+    IMAGES, TAILLE_OBJET, SONS, DOSSIER_PROJET
 )
 
 
@@ -89,3 +90,14 @@ def charger_sons():
             sons_charges[nom] = None
     
     return sons_charges
+
+# --- NOUVELLE FONCTION POUR CHARGER IMAGE TOASTY (OPTIONNEL) ---
+def charger_image_toasty():
+    """
+    Charge l'image toasty si elle existe (pour le mode MIDI).
+    Retourne None si elle n'existe pas.
+    """
+    chemin_toasty = os.path.join(DOSSIER_PROJET, "image", "toasty.png")
+    if os.path.exists(chemin_toasty):
+        return charger_image(chemin_toasty, (200, 200))
+    return None
